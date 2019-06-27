@@ -1,0 +1,36 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<flow-service  xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://www.primaze.com/prime/schema" name="SimpleFlow">
+	<flow name="SimpleFlow">
+		<transaction>REQUIRED</transaction>
+		<cache>
+		</cache>
+		<group name="variables">
+			<element name="rawIn" type="raw" minOccurs="1" scope="Input"/>
+			<element name="rawOut" type="raw" minOccurs="1" scope="Output"/>
+			<element name="empObj" type="Employee" minOccurs="1" scope="Local"/>
+			<element name="simpleEmpObj" type="SimpleEmployee" minOccurs="1" scope="Local"/>
+		</group>
+		<Block type="Block" id="c1c22168-b2ef-4748-bb00-1ce52957fdf2">
+			<Unmarshall type="Unmarshall" id="33d8864a-00c2-4fb1-aa99-1248a8937d72">
+				<entity entity-type="Element">employee</entity>
+				<input>rawIn</input>
+				<output>empObj</output>
+			</Unmarshall>
+			<Validate type="Validate" id="Validate1">
+				<validation>employee-default</validation>
+				<validation-set>employee-default</validation-set>
+				<input>empObj</input>
+			</Validate>
+			<Map type="Map" id="6bbe7f7c-7ae2-42f8-9a0d-cf92c6199cee">
+				<map>empmap</map>
+				<input>empObj</input>
+				<output>simpleEmpObj</output>
+			</Map>
+			<Marshall type="Marshall" id="58aa5a29-0110-48d2-8037-6c06c464d550">
+				<entity entity-type="Element">simpleemployee</entity>
+				<input>simpleEmpObj</input>
+				<output>rawOut</output>
+			</Marshall>
+		</Block>
+	</flow>
+</flow-service>

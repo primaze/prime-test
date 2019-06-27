@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<validation  xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://www.primaze.com/prime/schema" name="employee-default">
+	<validationSet name="employee-default">
+		<validation name="E1" type="Employee" field="gender">
+			<constraint type="enumeration">M,F</constraint>
+		</validation>
+		<validation name="E2" type="Employee" field="age">
+			<constraint type="code">$value &gt; 20</constraint>
+		</validation>
+	</validationSet>
+</validation>

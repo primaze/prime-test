@@ -1,0 +1,138 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<prime-project name="Simple">
+	<content>
+		<module name="Simple" path="Simple.pml">
+		</module>
+	</content>
+	<properties>
+		<property name="testsuites">
+			<value>
+				<propertyList>
+				</propertyList>
+			</value>
+		</property>
+		<property name="datagen-specs">
+			<value><![CDATA[<datagenspecs>
+	<datagen name="WebLogicPOFormat" id="8479997a-cf76-44bc-b7de-18f5fd07d02a">
+	</datagen>
+	<datagen name="Party" id="5f81381d-893a-4030-8550-59c638b17358">
+		<data-pattern field="Party.CalendarCode">
+		</data-pattern>
+		<data-pattern field="Party.PartySubType">
+		</data-pattern>
+		<data-pattern field="Party">
+		</data-pattern>
+		<data-pattern field="Party.ProcessingRestrictions">
+		</data-pattern>
+		<data-pattern field="Party.CutoffProfileCode">
+		</data-pattern>
+		<data-pattern field="Party.EmailID">
+		</data-pattern>
+		<data-pattern field="Party.Status">
+		</data-pattern>
+		<data-pattern field="Party.AddressLine1">
+		</data-pattern>
+	</datagen>
+	<datagen name="testsuite" id="1d31d22e-c9d7-466c-89ad-1e5fdb2fbe46">
+		<data-pattern field="testsuite.name">
+			<template>TEST{{integer(2,100)}}</template>
+		</data-pattern>
+		<data-pattern field="testsuite">
+		</data-pattern>
+	</datagen>
+	<datagen name="Zoo" id="50435852-e061-4211-b85d-4e8614db7001">
+		<data-pattern field="Zoo">
+		</data-pattern>
+	</datagen>
+	<datagen name="MixedFormatFormat" id="659b2a6f-ecca-4032-ad5f-5758b82223c5">
+		<data-pattern field="MixedFormatFormat.PurchaseOrder.ShipTo.State">
+			<template>{{state()}}</template>
+		</data-pattern>
+		<data-pattern field="MixedFormatFormat.PurchaseOrder.ShipTo.Zip">
+			<pattern>\d{5}</pattern>
+			<template></template>
+		</data-pattern>
+		<data-pattern field="MixedFormatFormat.PurchaseOrder.ShipTo.Name">
+			<template>{{firstName()}} {{lastName()}}</template>
+		</data-pattern>
+		<data-pattern field="MixedFormatFormat.PurchaseOrder.ShipTo.Street">
+			<template>{{integer(1, 10)}} {{street()}}</template>
+		</data-pattern>
+		<data-pattern field="MixedFormatFormat.PurchaseOrder">
+			<min-occurs>1</min-occurs>
+			<max-occurs>10</max-occurs>
+		</data-pattern>
+		<data-pattern field="MixedFormatFormat.PurchaseOrder.ShipTo.City">
+			<template>{{city()}}</template>
+		</data-pattern>
+		<data-pattern field="MixedFormatFormat.PurchaseOrder.ShipTo.Country">
+			<template>{{country()}}</template>
+		</data-pattern>
+		<data-pattern field="MixedFormatFormat.PurchaseOrder.Items.Item.USPrice">
+			<template>{{floating(20, 30, 2, "")}}</template>
+		</data-pattern>
+		<data-pattern field="MixedFormatFormat">
+		</data-pattern>
+	</datagen>
+	<datagen name="USAddress" id="1ab2bf43-d95b-4eaa-8a53-90e7d912e107">
+		<data-pattern field="USAddress.name">
+			<template>{{firstName()}}</template>
+		</data-pattern>
+		<data-pattern field="USAddress.country">
+			<template>{{country()}}</template>
+		</data-pattern>
+		<data-pattern field="USAddress">
+		</data-pattern>
+	</datagen>
+	<datagen name="Person" id="cdc9c82e-2c4d-48d4-9f73-1edf2d0b4de6">
+		<data-pattern field="Person.email">
+			<template>{{email()}}</template>
+		</data-pattern>
+		<data-pattern field="Person.friends.id">
+			<template>{{index()}}</template>
+		</data-pattern>
+		<data-pattern field="Person.friends.name">
+			<template>{{firstName(gender)}} {{surname()}}</template>
+		</data-pattern>
+		<data-pattern field="Person.eyeColor">
+			<template>{{random("blue", "brown", "green")}}</template>
+		</data-pattern>
+		<data-pattern field="Person.phone">
+			<template>+1 {{phone()}}</template>
+		</data-pattern>
+		<data-pattern field="Person.isActive">
+			<template>{{bool()}}</template>
+		</data-pattern>
+		<data-pattern field="Person.company">
+			<template></template>
+		</data-pattern>
+		<data-pattern field="Person.age">
+			<template>{{integer(20, 40)}}</template>
+		</data-pattern>
+		<data-pattern field="Person.name">
+			<template>{{firstName()}} {{surName()}}</template>
+		</data-pattern>
+		<data-pattern field="Person._id">
+			<template>{{objectId()}}</template>
+		</data-pattern>
+		<data-pattern field="Person.balance">
+			<template>{{floating(1000, 4000, 2, "$0,0.00")}}</template>
+		</data-pattern>
+		<data-pattern field="Person.gender">
+			<template>{{gender()}}</template>
+		</data-pattern>
+		<data-pattern field="Person.friends">
+			<min-occurs>2</min-occurs>
+			<max-occurs>3</max-occurs>
+		</data-pattern>
+		<data-pattern field="Person.favoriteFruit">
+			<template>{{random("apple", "banana", "strawberry")}}</template>
+		</data-pattern>
+		<data-pattern field="Person">
+		</data-pattern>
+	</datagen>
+</datagenspecs>
+]]></value>
+		</property>
+	</properties>
+</prime-project>

@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<flow  xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VirtualFieldFlow">
+	<group name="variables">
+		<field name="rawIn" type="xs:string" minOccurs="1" scope="Input"/>
+		<field name="obj" type="Employee" minOccurs="1" scope="Local"/>
+		<field name="nameOut" type="xs:string" minOccurs="1" description="dd" scope="Output"/>
+	</group>
+	<block name="body">
+		<component type="Unmarshall" id="e4bc82a2-eaeb-4899-a794-5a926ca1c8f6">
+			<element>employee</element>
+			<input>rawIn</input>
+			<output>obj</output>
+		</component>
+		<component type="Script" id="df62e809-b72c-4e99-bea8-83d517d48c86">
+			<script>nameOut = obj.fullName</script>
+		</component>
+	</block>
+</flow>

@@ -1,0 +1,176 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<prime-workspace name="Simple">
+	<openFiles>
+		<file name="Test Runner" active="false" file="false">
+			<state><![CDATA[<testrunner>
+	<item name="SimpleFlow" type="Flow">
+		<input name="rawIn">
+			<data><![CDATA[<?xml version="1.1" encoding="UTF-8" ?>
+<employee>
+    <firstName>Ram</firstName>
+    <lastName>Kumar</lastName>
+    <age>23</age>
+    <gender>M</gender>
+    <joindate>1996-03-12</joindate>
+    <experience>7.0</experience>
+    <qualification>B.E.</qualification>
+    <salary>8000.5</salary>
+    <sportsman>Y</sportsman>
+    <designation>Marketing Manager</designation>
+    <identification>ID1</identification>
+    <position>
+        <department>HR</department>
+        <desig>head</desig>
+    </position>
+    <position>
+        <department>IT</department>
+        <desig>architect</desig>
+    </position>
+    <optsection>
+        <fld1>FLD1Value</fld1>
+        <fld2>FLD2Value</fld2>
+    </optsection>
+</employee>]]]]><![CDATA[></data>
+		</input>
+	</item>
+	<item name="VirtualFieldFlow" type="Flow" verb="parse">
+		<input name="rawIn">
+			<data><![CDATA[<?xml version="1.1" encoding="UTF-8" ?>
+<employee>
+    <firstName>Ram</firstName>
+    <lastName>Kumsar</lastName>
+    <age>23</age>
+    <gender>M</gender>
+    <joindate>1996-03-12</joindate>
+    <experience>7.0</experience>
+    <qualification>B.E.</qualification>
+    <salary>8000.5</salary>
+    <sportsman>Y</sportsman>
+    <designation>Marketing Manager</designation>
+    <identification>ID1</identification>
+    <position>
+        <department>HR</department>
+        <desig>head</desig>
+    </position>
+    <position>
+        <department>IT</department>
+        <desig>architect</desig>
+    </position>
+    <optsection>
+        <fld1>FLD1Value</fld1>
+        <fld2>FLD2Value</fld2>
+    </optsection>
+</employee>]]]]><![CDATA[></data>
+		</input>
+		<output name="nameOut">
+		</output>
+	</item>
+	<item name="Employee" type="ComplexType" verb="map">
+		<input name="_data" content-type="xml">
+		</input>
+		<output name="_data" content-type="xml">
+		</output>
+	</item>
+	<item name="empmap" type="TypeMapping" verb="parse">
+		<input name="_data" content-type="xml">
+			<data><![CDATA[<?xml version="1.1" encoding="UTF-8" ?>
+<employee>
+    <firstName>Ram</firstName>
+    <lastName>Kumar</lastName>
+    <age>23</age>
+    <gender>M</gender>
+    <joindate>1996-03-12</joindate>
+    <experience>7.0</experience>
+    <qualification>B.E.</qualification>
+    <salary>8000.5</salary>
+    <sportsman>Y</sportsman>
+    <designation>Marketing Manager</designation>
+    <identification>ID1</identification>
+    <position>
+        <department>HR</department>
+        <desig>head</desig>
+    </position>
+    <position>
+        <department>IT</department>
+        <desig>architect</desig>
+    </position>
+    <optsection>
+        <fld1>FLD1VXalue</fld1>
+        <fld2>FLD2Value</fld2>
+    </optsection>
+</employee>]]]]><![CDATA[></data>
+		</input>
+		<output name="_data" content-type="xml">
+		</output>
+	</item>
+	<item name="employee" type="Element" verb="run">
+		<input name="_data" content-type="xml">
+			<data><![CDATA[<?xml version="1.1" encoding="UTF-8" ?>
+<employee>
+    <firstName>Ram</firstName>
+    <lastName>Kumar</lastName>
+    <age>23</age>
+    <gender>M</gender>
+    <joindate>1996-03-12</joindate>
+    <experience>7.0</experience>
+    <qualification>B.E.</qualification>
+    <salary>8000.5</salary>
+    <sportsman>Y</sportsman>
+    <designation>Marketing Manager</designation>
+    <identification>ID1</identification>
+    <position>
+        <department>HR</department>
+        <desig>head</desig>
+    </position>
+    <position>
+        <department>IT</department>
+        <desig>architect</desig>
+    </position>
+    <optsection>
+        <fld1>FLD1Value</fld1>
+        <fld2>FLD2Value</fld2>
+    </optsection>
+</employee>]]]]><![CDATA[></data>
+		</input>
+		<output name="_data" content-type="xml">
+		</output>
+	</item>
+</testrunner>
+]]></state>
+		</file>
+		<file name="simple.model.xml" active="false" file="true">
+			<state><![CDATA[]]></state>
+		</file>
+		<file name="CamelFlow.flow.xml" active="true" file="true">
+			<state><![CDATA[FlowService:CamelFlow!Flow:CamelFlow/Flow:CamelFlow]]></state>
+		</file>
+		<file name="VirtualFieldFlow.flow.xml" active="false" file="true">
+			<state><![CDATA[]]></state>
+		</file>
+		<file name="employee.validation.xml" active="false" file="true">
+			<state><![CDATA[]]></state>
+		</file>
+		<file name="SimpleFlow.flow.xml" active="false" file="true">
+			<state><![CDATA[]]></state>
+		</file>
+		<file name="employee.map.xml" active="false" file="true">
+			<state><![CDATA[]]></state>
+		</file>
+		<file name="EmptyFlow.flow.xml" active="false" file="true">
+			<state><![CDATA[]]></state>
+		</file>
+	</openFiles>
+	<explorer>
+		<expanded>
+			<node path="Simple/Simple"/>
+			<node path="Simple/Simple/simple/CamelFlow.flow.xml"/>
+			<node path="Simple"/>
+			<node path="Simple/Simple/simple"/>
+		</expanded>
+		<selected>
+			<node path="Simple/Simple/simple/CamelFlow.flow.xml/CamelFlow"/>
+		</selected>
+	</explorer>
+	<debugger>
+	</debugger>
+</prime-workspace>

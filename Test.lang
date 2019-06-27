@@ -1,0 +1,45 @@
+import static com.primaze.prime.runtime.ext.PrimeExt.*;
+print(project.name);
+args = new String[] {"D:\\primaze\\samples\\mapping\\simple\\sample\\employee.xml"};
+print(args[0]);
+var input = fileToRawInput(args[0]);
+var empObj = (Employee)parseXML(project.getElement("employee"), input);
+var simpleEmpObj = map(project, empObj, "empmap", (String)null);
+var output = writeXML(project.getElement("simpleemployee"), simpleEmpObj);
+print("Input ..... ");
+print(input);
+print("output ..... ");
+print(output);
+
+
+var simpleEmp = new SimpleEmployee();
+simpleEmp.name = empObj.firstName + " " + empObj.lastName;
+simpleEmp.age = empObj.age;
+simpleEmp.joindate = empObj.joindate;
+simpleEmp.experience = empObj.experience;
+simpleEmp.qualification = empObj.qualification;
+simpleEmp.salary = empObj.salary;
+simpleEmp.sportsman = empObj.sportsman;
+simpleEmp.designation = empObj.designation;
+simpleEmp.identification = empObj.identification;
+simpleEmp.summary = empObj.position.department.toString();
+var srcPos = empObj.position.filter(e -> e.department == "HR");
+
+/*for( var p : srcPos) {
+	var pos = simpleEmp+.position;
+	pos.department = p.department;
+	pos.desig = p.desig;
+}*/
+
+srcPos.forEach(p -> {
+	var pos = simpleEmp+.position;
+	pos.department = p.department;
+	pos.desig = p.desig + "XXX";
+});
+srcPos.forEach(p -> {
+	var pos = simpleEmp+.position;
+	pos.department = p.department;
+	pos.desig = p.desig + "XXX";
+});
+print(simpleEmp);
+return;

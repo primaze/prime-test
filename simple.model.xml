@@ -1,0 +1,60 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<model xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://www.primaze.com/prime/schema">
+	<field name="employee" type="Employee" messageRoot="true" minOccurs="1"/>
+	<field name="simpleemployee" type="SimpleEmployee" messageRoot="true" minOccurs="1"/>
+	<complexType name="EmpPosition" derivation="extension">
+		<field name="department" type="xs:string" minOccurs="1"/>
+		<field name="desig" type="xs:string" minOccurs="1"/>
+	</complexType>
+	<complexType name="Employee" derivation="extension">
+		<field name="firstName" type="xs:string" minOccurs="1"/>
+		<field name="fullName" type="xs:string" script="firstName + &quot; &quot; + lastName + position.filter(e -&gt; e.department == &quot;HR&quot;) ?.desig" minOccurs="1" field-type="Virtual"/>
+		<field name="lastName" type="xs:string" minOccurs="1"/>
+		<field name="age" type="xs:int" minOccurs="1"/>
+		<field name="gender" type="xs:string" minOccurs="1"/>
+		<field name="joindate" type="xs:date" minOccurs="1"/>
+		<field name="experience" type="xs:double" minOccurs="1"/>
+		<field name="qualification" type="xs:string" minOccurs="1"/>
+		<field name="salary" type="xs:double" minOccurs="1"/>
+		<field name="sportsman" type="xs:string" minOccurs="1"/>
+		<field name="designation" type="xs:string" minOccurs="1"/>
+		<field name="identification" type="xs:string" minOccurs="1"/>
+		<field name="position" type="EmpPosition" minOccurs="1" maxOccurs="-1"/>
+		<field name="optsection" type="OptSection" minOccurs="1">
+			<complexType name="OptSection" derivation="extension">
+				<field name="fld1" type="xs:string" minOccurs="1"/>
+				<field name="fld2" type="xs:string" minOccurs="1"/>
+			</complexType>
+		</field>
+		<field name="bref" type="GblType" minOccurs="1"/>
+	</complexType>
+	<complexType name="SimpleEmpPosition" derivation="extension">
+		<field name="department" type="xs:string" minOccurs="1"/>
+		<field name="desig" type="xs:string" minOccurs="1"/>
+	</complexType>
+	<complexType name="SimpleEmployee" derivation="extension">
+		<field name="name" type="xs:string" minOccurs="1"/>
+		<field name="age" type="xs:int" minOccurs="1"/>
+		<field name="gender" type="xs:string" minOccurs="1"/>
+		<field name="joindate" type="xs:date" minOccurs="1"/>
+		<field name="experience" type="xs:double" minOccurs="1"/>
+		<field name="qualification" type="xs:string" minOccurs="1"/>
+		<field name="salary" type="xs:double" minOccurs="1"/>
+		<field name="sportsman" type="xs:string" minOccurs="1"/>
+		<field name="designation" type="xs:string" minOccurs="1"/>
+		<field name="identification" type="xs:string" minOccurs="1"/>
+		<field name="summary" type="xs:string" minOccurs="1"/>
+		<field name="position" type="SimpleEmpPosition" minOccurs="1" maxOccurs="-1"/>
+		<field name="optsection" type="OptSection" minOccurs="1">
+			<complexType name="OptSection" derivation="extension">
+				<field name="fld1" type="xs:string" minOccurs="1"/>
+				<field name="fld2" type="xs:string" minOccurs="1"/>
+			</complexType>
+		</field>
+	</complexType>
+	<field name="Bbl" type="GblType" minOccurs="1"/>
+	<complexType name="GblType" derivation="extension">
+		<field name="a1" type="xs:string" minOccurs="1"/>
+		<field name="a2" type="xs:string" minOccurs="1"/>
+	</complexType>
+</model>

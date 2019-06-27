@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<flow  xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://www.primaze.com/prime/schema" name="CamelFlow">
+	<group name="variables">
+		<element name="rawIn" type="xs:string" minOccurs="1" scope="Local"/>
+		<element name="rawOut" type="xs:string" minOccurs="1" scope="Local"/>
+	</group>
+	<Block type="Block" id="8d069eda-c0f4-4d58-81b3-2a04b1107538">
+		<CamelInput type="CamelInput" id="CamelInput1">
+			<output>rawIn</output>
+			<uri>file:input</uri>
+		</CamelInput>
+		<Script type="Script" id="Script1">
+			<script>rawOut = rawIn + "MODIFIED"</script>
+		</Script>
+		<CamelOutput type="CamelOutput" id="CamelOutput1">
+			<input>rawOut</input>
+			<uri>file:output</uri>
+		</CamelOutput>
+	</Block>
+</flow>

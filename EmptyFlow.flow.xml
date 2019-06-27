@@ -1,0 +1,7 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<flow  xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://www.primaze.com/prime/schema" name="EmptyFlow">
+	<group name="variables">
+	</group>
+	<Block type="Block" id="9ca397ae-cd1d-479d-8278-6e1e9eef482e">
+	</Block>
+</flow>

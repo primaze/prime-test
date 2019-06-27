@@ -1,0 +1,12 @@
+import static com.primaze.prime.runtime.ext.PrimeExt.*;
+print(project.name);
+var elm = project.getElement("employee");
+var output = writeXML(project.getElement("ElementDecl"), elm);
+print(output);
+
+var type = project.getType("SimpleEmployee");
+print("Type = " + type);
+var ctDef = project.getElement("ComplexType");
+print("ctDef = " + ctDef);
+var typeOut = writeXML(ctDef, type);
+print(typeOut);

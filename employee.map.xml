@@ -1,0 +1,61 @@
+<mappingSet name="empset">
+	<typeMapping name="empmap" destinationType="SimpleEmployee" sourceType="Employee" messageMapping="true">
+		<mapping destination="name">
+			<source>firstName + " " + lastName</source>
+		</mapping>
+		<mapping destination="age">
+			<source>age + 5</source>
+		</mapping>
+		<mapping destination="joindate">
+			<source>joindate</source>
+		</mapping>
+		<mapping destination="experience">
+			<source>experience</source>
+		</mapping>
+		<mapping destination="qualification">
+			<source>qualification</source>
+		</mapping>
+		<mapping destination="salary">
+			<source>salary</source>
+		</mapping>
+		<mapping destination="sportsman">
+			<source>sportsman</source>
+		</mapping>
+		<mapping destination="designation">
+			<source>designation</source>
+		</mapping>
+		<mapping destination="identification">
+			<source>identification</source>
+		</mapping>
+		<mapping destination="summary">
+			<source>position.department.toString()</source>
+		</mapping>
+		<mapping destination="position">
+			<source>position.filter(e -&gt; e.department == "HR") </source>
+			<typeMapping ref="positionmap" destinationType="SimpleEmpPosition" sourceType="EmpPosition">
+			</typeMapping>
+		</mapping>
+		<mapping destination="optsection">
+			<source>optsection.fld1 == "FLD1Value" ? optsection : null</source>
+			<typeMapping>
+				<mapping destination="fld1">
+					<source>fld1</source>
+				</mapping>
+				<mapping destination="fld2">
+					<source>fld2 + " - APPEND -" + $root.qualification</source>
+				</mapping>
+			</typeMapping>
+		</mapping>
+		<mapping destination="gender">
+			<source>gender</source>
+		</mapping>
+	</typeMapping>
+	<typeMapping name="positionmap" destinationType="SimpleEmpPosition" sourceType="EmpPosition">
+		<mapping destination="department">
+			<source>department + "REF"</source>
+		</mapping>
+		<mapping destination="desig">
+			<source>desig</source>
+		</mapping>
+	</typeMapping>
+</mappingSet>
